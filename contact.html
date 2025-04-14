@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OrnaLuxe - Contact</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffaf5;
+      margin: 0;
+      color: #333;
+    }
+    header, footer {
+      background-color: #e0b0ff;
+      padding: 1rem 2rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      margin: 0 0.7rem;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      position: relative;
+    }
+    nav a i.fa-shopping-cart {
+      font-size: 1.2rem;
+      vertical-align: middle;
+    }
+    .cart-badge {
+      position: absolute;
+      top: -5px;
+      right: -10px;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      padding: 0 5px;
+      font-size: 0.7rem;
+    }
+    main {
+      padding: 2rem;
+    }
+    h2 {
+      text-align: center;
+      color: #800080;
+    }
+    form {
+      max-width: 500px;
+      margin: 2rem auto;
+      background: #fdf1ff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(128,0,128,0.15);
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #800080;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #800080;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #9932cc;
+    }
+    footer {
+  background-color: #e0b0ff;
+  padding: 1rem 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.social-logos {
+  margin-top: 0.7rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-logos img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.social-logos a:hover img {
+  transform: scale(1.2);
+}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><i class="fas fa-gem"></i> OrnaLuxe</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="products.html#cartSection" title="View Cart">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-badge" id="cartCount">0</span>
+    </a>
+  </nav>
+</header>
+
+<main>
+  <h2>Sign Up Before Purchase</h2>
+  <form action="#" method="post">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="mobile">Mobile Number</label>
+    <input type="tel" id="mobile" name="mobile" required />
+
+    <label for="address">Delivery Address</label>
+    <textarea id="address" name="address" required></textarea>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required />
+
+    <button type="submit">Sign Up / Login</button>
+  </form>
+</main>
+
+<footer>
+  <p>&copy; 2025 OrnaLuxe. All rights reserved.</p>
+  <div class="social-logos">
+    <a href="https://facebook.com" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook">
+    </a>
+    <a href="https://instagram.com" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+    </a>
+    <i class="fa-brands fa-x-twitter"></i>
+    <a href="https://wa.me/8801XXXXXXXXX" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+  </div>
+</footer>
+<script>
+  let cartCount = 0;
+  document.getElementById('cartCount').textContent = cartCount;
+</script>
+
+</body>
+</html>

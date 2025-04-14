@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OrnaLuxe - Products</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffaf5;
+      margin: 0;
+      color: #333;
+    }
+    header, footer {
+      background-color: #e0b0ff;
+      padding: 1rem 2rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      margin: 0 0.7rem;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      position: relative;
+    }
+    nav a i.fa-shopping-cart {
+      font-size: 1.2rem;
+      vertical-align: middle;
+    }
+    .cart-badge {
+      position: absolute;
+      top: -5px;
+      right: -10px;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      padding: 0 5px;
+      font-size: 0.7rem;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+    .product {
+      background: #fdf1ff;
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(128,0,128,0.15);
+      transition: transform 0.3s ease;
+    }
+    .product:hover {
+      transform: translateY(-5px);
+    }
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .product h3 {
+      margin: 0.7rem 0 0.3rem;
+    }
+    .cart-section {
+      text-align: center;
+      margin: 2rem auto;
+      background: #f3eaff;
+      padding: 1rem;
+      border-radius: 10px;
+      max-width: 500px;
+    }
+    .cart-section p {
+      margin: 0.5rem 0;
+      font-weight: bold;
+    }
+    .cart-badge {
+      position: absolute;
+      top: -5px;
+      right: -10px;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      padding:0 05px;
+      font-size: 0.7rem;
+    }
+    .add-btn, .bkash-btn {
+      background-color: #800080;
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border: none;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+      cursor: pointer;
+    }
+    .add-btn:hover {
+      background-color: #9932cc;
+    }
+    .bkash-btn {
+      background-color: #d5008f;
+      margin-top: 1rem;
+    }
+    .bkash-btn:hover {
+      background-color: #b00075;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      position: relative;
+    }
+    .modal-content h2 {
+      color: #d5008f;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    footer {
+  background-color: #e0b0ff;
+  padding: 1rem 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.social-logos {
+  margin-top: 0.7rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-logos img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.social-logos a:hover img {
+  transform: scale(1.2);
+}
+      .product img {
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><i class="fas fa-gem"></i> OrnaLuxe</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="products.html#cartSection" title="View Cart">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-badge" id="cartCount">0</span>
+    </a>
+  </nav>
+</header>
+
+<main class="product-grid">
+  <div class="product">
+    <img src="https://via.placeholder.com/300x200?text=Gold+Ring" alt="Gold Ring">
+    <h3>Gold Ring</h3>
+    <p>BDT 199</p>
+    <button class="add-btn" onclick="addToCart('Gold Ring', 199)">Add to Cart</button>
+  </div>
+  <div class="product">
+    <img src="https://via.placeholder.com/300x200?text=Silver+Bracelet" alt="Silver Bracelet">
+    <h3>Silver Bracelet</h3>
+    <p>BDT 149</p>
+    <button class="add-btn" onclick="addToCart('Silver Bracelet', 149)">Add to Cart</button>
+  </div>
+  <div class="product">
+    <img src="https://via.placeholder.com/300x200?text=Diamond+Pendant" alt="Diamond Pendant">
+    <h3>Diamond Pendant</h3>
+    <p>BDT 499</p>
+    <button class="add-btn" onclick="addToCart('Diamond Pendant', 499)">Add to Cart</button>
+  </div>
+  <div class="product">
+    <img src="https://via.placeholder.com/300x200?text=Love+Locket" alt="Love Locket">
+    <h3>Love Locket</h3>
+    <p>BDT 129</p>
+    <button class="add-btn" onclick="addToCart('Love Locket', 129)">Add to Cart</button>
+  </div>
+</main>
+
+<section class="cart-section" id="cartSection" style="display:none;">
+  <h2><i class="fas fa-shopping-cart"></i> Your Cart</h2>
+  <div id="cartItems"></div>
+  <p>Total: BDT <span id="cartTotal">0</span></p>
+  <button class="bkash-btn" onclick="openModal()">Pay with bKash</button>
+</section>
+
+<!-- Modal -->
+<div class="modal" id="bkashModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2>Complete Your Payment</h2>
+    <p>Send total amount to <strong>017XXXXXXXX</strong></p>
+    <p><strong>Amount:</strong> BDT <span id="modalTotal">0</span></p>
+    <p>After payment, send Transaction ID to confirm your order.</p>
+    <p style="color: #888;">(This is a simulated payment. For real transactions, bKash API is needed.)</p>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 OrnaLuxe. All rights reserved.</p>
+  <div class="social-logos">
+    <a href="https://facebook.com" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook">
+    </a>
+    <a href="https://instagram.com" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+    </a>
+    <i class="fa-brands fa-x-twitter"></i>
+    <a href="https://wa.me/8801XXXXXXXXX" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+  </div>
+</footer>
+
+<script>
+  let cart = [];
+  let total = 0;
+
+  function addToCart(name, price) {
+    cart.push({ name, price });
+    total += price;
+    updateCartDisplay();
+  }
+
+  function updateCartDisplay() {
+    const section = document.getElementById('cartSection');
+    const list = document.getElementById('cartItems');
+    const totalDisplay = document.getElementById('cartTotal');
+    list.innerHTML = '';
+    cart.forEach(item => {
+      const p = document.createElement('p');
+      p.textContent = `${item.name} - BDT ${item.price}`;
+      list.appendChild(p);
+    });
+    totalDisplay.textContent = total;
+    section.style.display = 'block';
+  }
+
+  function openModal() {
+    document.getElementById('modalTotal').textContent = total;
+    document.getElementById('bkashModal').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('bkashModal').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
